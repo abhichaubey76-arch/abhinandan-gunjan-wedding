@@ -30,7 +30,7 @@ button, a {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Falling petals */
+/* Falling flowers and golden sparkles */
 #petals {
   position: fixed;
   inset: 0;
@@ -61,19 +61,22 @@ button, a {
     transform: translate3d(0, -5vh, 0) rotate(0deg);
     opacity: 0;
   }
+
   12% {
     opacity: 0.8;
   }
+
   85% {
     opacity: 0.65;
   }
+
   100% {
     transform: translate3d(var(--drift), 110vh, 0) rotate(600deg);
     opacity: 0;
   }
 }
 
-/* Opening screen */
+/* Gate opening screen */
 .entrance {
   position: fixed;
   inset: 0;
@@ -209,6 +212,7 @@ button, a {
   color: #e8a5b2;
 }
 
+/* Open invitation button */
 .open-button {
   position: relative;
   z-index: 3;
@@ -250,7 +254,7 @@ button, a {
   pointer-events: none;
 }
 
-/* Invitation card */
+/* Main invitation background */
 .invitation {
   min-height: 100vh;
   display: grid;
@@ -259,7 +263,10 @@ button, a {
   opacity: 0;
   visibility: hidden;
   transform: translateY(25px);
-  transition: opacity 1.2s ease, transform 1.2s ease, visibility 1.2s;
+  transition:
+    opacity 1.2s ease,
+    transform 1.2s ease,
+    visibility 1.2s;
   background:
     radial-gradient(ellipse at top, #55263a 0%, transparent 65%),
     linear-gradient(160deg, #160d18, #2d1423 60%, #120b15);
@@ -271,6 +278,7 @@ button, a {
   transform: translateY(0);
 }
 
+/* Premium cream invitation card */
 .card {
   width: 100%;
   max-width: 490px;
@@ -337,49 +345,75 @@ button, a {
   line-height: 1.65;
 }
 
-.photo-frame {
-  position: relative;
-  width: min(230px, 75%);
-  aspect-ratio: 4 / 5;
-  margin: 26px auto;
-  padding: 7px;
-  border: 1px solid #c9a45c;
-  border-radius: 150px 150px 5px 5px;
-  background: #f4e7d2;
+/* TWO-PHOTO GALLERY */
+.photo-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 14px;
+  width: 100%;
+  max-width: 440px;
+  margin: 28px auto;
 }
 
-.photo-frame img {
+/* Gold arched photo frames */
+.photo-gallery .photo-frame {
+  position: relative;
+  width: calc(50% - 7px);
+  max-width: 210px;
+  aspect-ratio: 3 / 4;
+  flex: 1 1 0;
+  min-width: 0;
+  margin: 0;
+  padding: 5px;
+  overflow: hidden;
+  border: 1px solid #c9a45c;
+  border-radius: 120px 120px 5px 5px;
+  background: linear-gradient(145deg, #fff4d7, #d7b66f);
+  box-shadow: 0 8px 25px #8b693222;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.photo-gallery .photo-frame:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px #8b693240;
+}
+
+/* Photos fill the frames */
+.photo-gallery .photo-frame img {
+  display: block;
   width: 100%;
   height: 100%;
-  display: block;
   object-fit: cover;
-  border-radius: 145px 145px 2px 2px;
+  border-radius: 115px 115px 2px 2px;
 }
 
-.photo-placeholder {
+/* Placeholder if a photo has not been uploaded */
+.photo-gallery .photo-placeholder {
   display: none;
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
-  gap: 10px;
   flex-direction: column;
+  gap: 8px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 54px;
+  font-size: 38px;
   color: #8a5b39;
   background: linear-gradient(145deg, #f8ead2, #ead2b0);
-  border-radius: 140px 140px 2px 2px;
+  border-radius: 110px 110px 2px 2px;
 }
 
-.photo-placeholder span {
-  font-size: 22px;
+.photo-gallery .photo-placeholder span {
   color: #9c3148;
+  font-size: 22px;
 }
 
-.photo-frame.no-photo .photo-placeholder {
+.photo-gallery .photo-frame.no-photo .photo-placeholder {
   display: flex;
 }
 
+/* Couple names */
 .names h3 {
   margin: 10px 0;
   font-family: 'Cormorant Garamond', serif;
@@ -399,13 +433,20 @@ button, a {
   color: #80605b;
 }
 
+/* Gold divider */
 .gold-line {
   width: 90px;
   height: 1px;
   margin: 28px auto;
-  background: linear-gradient(90deg, transparent, #b38b46, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #b38b46,
+    transparent
+  );
 }
 
+/* Wedding date */
 .date {
   display: flex;
   align-items: center;
@@ -425,6 +466,7 @@ button, a {
   color: #73283f;
 }
 
+/* Venue */
 .venue {
   margin: 30px 0 20px;
 }
@@ -446,6 +488,7 @@ button, a {
   color: #866d65;
 }
 
+/* Maps button */
 .gold-button {
   display: inline-block;
   padding: 14px 25px;
@@ -473,6 +516,7 @@ button, a {
   font-size: 15px;
 }
 
+/* Mobile screen adjustments */
 @media (max-width: 380px) {
   .entrance {
     gap: 17px;
@@ -496,8 +540,17 @@ button, a {
   .card {
     padding: 38px 18px;
   }
+
+  .photo-gallery {
+    gap: 10px;
+  }
+
+  .photo-gallery .photo-frame {
+    padding: 4px;
+  }
 }
 
+/* Respect reduced-motion accessibility preferences */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
