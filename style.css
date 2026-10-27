@@ -380,13 +380,16 @@ button, a {
 }
 
 /* Photos fill the frames */
+
 .photo-gallery .photo-frame img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center;
   border-radius: 115px 115px 2px 2px;
 }
+
 
 /* Placeholder if a photo has not been uploaded */
 .photo-gallery .photo-placeholder {
