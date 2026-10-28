@@ -21,6 +21,7 @@
       <p>Two hearts · One beautiful forever</p>
     </div>
 
+    <!-- Decorative gates -->
     <div class="gates" id="gates">
       <div class="gate gate-left">
         <div class="gate-design">
@@ -43,7 +44,7 @@
       <span>✧</span> CLICK HERE AND OPEN YOUR INVITATION <span>✧</span>
     </button>
 
-    <p class="entrance-date">11 · 12 · 2026</p>
+    <p class="entrance-date">05 · 12 · 2026 — 11 · 12 · 2026</p>
   </section>
 
   <!-- Wedding invitation -->
@@ -58,10 +59,10 @@
 
       <p class="intro">
         With hearts full of love and gratitude,<br>
-        we invite you to celebrate our special day.
+        we invite you to celebrate our special days.
       </p>
 
-      <!-- Two couple photos -->
+      <!-- Couple photos -->
       <div class="photo-gallery">
 
         <div class="photo-frame">
@@ -103,14 +104,45 @@
 
       <div class="gold-line"></div>
 
-      <p class="eyebrow">SAVE THE DATE</p>
+      <!-- Event 1: Shubh Tilak -->
+      <p class="eyebrow">FIRST CELEBRATION</p>
 
-      <div class="date">
-        <span>FRIDAY</span>
-        <strong>11</strong>
-        <span>DECEMBER · 2026</span>
+      <div class="event">
+        <span class="event-icon">❧</span>
+        <h3>Tilak</h3>
+        <p class="event-day">SATURDAY</p>
+
+        <div class="date">
+          <strong>05</strong>
+          <span>DECEMBER · 2026</span>
+        </div>
+
+        <p class="event-blessing">
+          A joyful beginning to our wedding celebrations.
+        </p>
       </div>
 
+      <div class="gold-line"></div>
+
+      <!-- Event 2: Shubh Vivah -->
+      <p class="eyebrow">THE WEDDING DAY</p>
+
+      <div class="event">
+        <span class="event-icon">❧</span>
+        <h3>Marriage</h3>
+        <p class="event-day">FRIDAY</p>
+
+        <div class="date">
+          <strong>11</strong>
+          <span>DECEMBER · 2026</span>
+        </div>
+
+        <p class="event-blessing">
+          Join us as we begin our forever together.
+        </p>
+      </div>
+
+      <!-- Wedding venue -->
       <div class="venue">
         <span class="venue-icon">✧</span>
         <h3>Pearl Palace</h3>
@@ -121,11 +153,11 @@
         class="gold-button"
         href="https://www.google.com/maps/search/?api=1&query=Pearl+Palace+Buxar+Bihar"
         target="_blank"
-        rel="noopener"
-      >VIEW VENUE ↗</a>
+        rel="noopener noreferrer"
+      >VIEW WEDDING VENUE ↗</a>
 
       <p class="closing">
-        Your presence will make our celebration<br>
+        Your presence will make our celebrations<br>
         even more beautiful.
       </p>
 
@@ -168,7 +200,7 @@
       petals.appendChild(petal);
     }
 
-    // Open the gates and reveal the wedding card
+    // Open the gates and reveal the wedding invitation
     button.addEventListener("click", () => {
       if (gates.classList.contains("opened")) return;
 
