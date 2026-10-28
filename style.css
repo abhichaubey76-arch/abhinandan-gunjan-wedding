@@ -30,7 +30,10 @@ button, a {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Falling flowers and golden sparkles */
+/* ========================================
+   FALLING FLOWERS AND GOLDEN SPARKLES
+======================================== */
+
 #petals {
   position: fixed;
   inset: 0;
@@ -76,7 +79,10 @@ button, a {
   }
 }
 
-/* Gate opening screen */
+/* ========================================
+   GATE OPENING SCREEN
+======================================== */
+
 .entrance {
   position: fixed;
   inset: 0;
@@ -125,7 +131,10 @@ button, a {
   color: #e6cbb1;
 }
 
-/* Two ornate gates */
+/* ========================================
+   TWO ORNATE GATES
+======================================== */
+
 .gates {
   width: min(390px, 90vw);
   height: min(43vh, 360px);
@@ -194,6 +203,7 @@ button, a {
   font-size: 27px;
 }
 
+/* Shree and Ganesh gate monograms */
 .gate-monogram {
   width: 88px;
   height: 88px;
@@ -202,9 +212,10 @@ button, a {
   border: 1px solid var(--gold);
   border-radius: 50%;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 28px;
+  font-size: 23px;
   color: var(--gold-light);
   box-shadow: 0 0 25px #d7b66f15;
+  text-align: center;
 }
 
 .gate-monogram i {
@@ -212,7 +223,10 @@ button, a {
   color: #e8a5b2;
 }
 
-/* Open invitation button */
+/* ========================================
+   OPEN INVITATION BUTTON
+======================================== */
+
 .open-button {
   position: relative;
   z-index: 3;
@@ -254,7 +268,10 @@ button, a {
   pointer-events: none;
 }
 
-/* Main invitation background */
+/* ========================================
+   MAIN INVITATION BACKGROUND
+======================================== */
+
 .invitation {
   min-height: 100vh;
   display: grid;
@@ -278,7 +295,10 @@ button, a {
   transform: translateY(0);
 }
 
-/* Premium cream invitation card */
+/* ========================================
+   PREMIUM CREAM INVITATION CARD
+======================================== */
+
 .card {
   width: 100%;
   max-width: 490px;
@@ -345,7 +365,10 @@ button, a {
   line-height: 1.65;
 }
 
-/* TWO-PHOTO GALLERY */
+/* ========================================
+   TWO-PHOTO GALLERY
+======================================== */
+
 .photo-gallery {
   display: flex;
   justify-content: center;
@@ -380,7 +403,6 @@ button, a {
 }
 
 /* Photos fill the frames */
-
 .photo-gallery .photo-frame img {
   display: block;
   width: 100%;
@@ -390,8 +412,7 @@ button, a {
   border-radius: 115px 115px 2px 2px;
 }
 
-
-/* Placeholder if a photo has not been uploaded */
+/* Placeholder when a photo is unavailable */
 .photo-gallery .photo-placeholder {
   display: none;
   width: 100%;
@@ -416,7 +437,10 @@ button, a {
   display: flex;
 }
 
-/* Couple names */
+/* ========================================
+   BRIDE AND GROOM NAMES
+======================================== */
+
 .names h3 {
   margin: 10px 0;
   font-family: 'Cormorant Garamond', serif;
@@ -436,7 +460,10 @@ button, a {
   color: #80605b;
 }
 
-/* Gold divider */
+/* ========================================
+   GOLD DIVIDER
+======================================== */
+
 .gold-line {
   width: 90px;
   height: 1px;
@@ -449,16 +476,69 @@ button, a {
   );
 }
 
-/* Wedding date */
+/* ========================================
+   EVENT SECTIONS: TILAK AND WEDDING
+======================================== */
+
+.event {
+  position: relative;
+  margin: 26px 0;
+  padding: 10px 8px 16px;
+  text-align: center;
+}
+
+/* Decorative event symbol */
+.event-icon {
+  display: block;
+  margin-bottom: 8px;
+  color: #b38b46;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+}
+
+/* Event title: Shubh Tilak / Shubh Vivah */
+.event h3 {
+  margin: 10px 0 12px;
+  color: #70253c;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(29px, 7vw, 36px);
+  font-weight: 500;
+}
+
+/* Day of the week */
+.event-day {
+  margin: 8px 0 18px;
+  color: #9d7840;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+/* Short event description */
+.event-blessing {
+  max-width: 290px;
+  margin: 18px auto 5px;
+  color: #80605b;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* ========================================
+   EVENT DATE DESIGN
+======================================== */
+
 .date {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   color: #8f6a35;
+  font-family: 'Montserrat', sans-serif;
   letter-spacing: 3px;
-  font-size: 9px;
+  font-size: 10px;
 }
 
 .date strong {
@@ -469,7 +549,10 @@ button, a {
   color: #73283f;
 }
 
-/* Venue */
+/* ========================================
+   WEDDING VENUE
+======================================== */
+
 .venue {
   margin: 30px 0 20px;
 }
@@ -484,14 +567,19 @@ button, a {
   font-family: 'Cormorant Garamond', serif;
   font-size: 29px;
   font-weight: 500;
+  color: #65233a;
 }
 
 .venue p {
   font-size: 12px;
+  line-height: 1.7;
   color: #866d65;
 }
 
-/* Maps button */
+/* ========================================
+   MAPS BUTTON
+======================================== */
+
 .gold-button {
   display: inline-block;
   padding: 14px 25px;
@@ -502,12 +590,17 @@ button, a {
   font-size: 9px;
   letter-spacing: 2px;
   text-decoration: none;
-  transition: background 0.3s;
+  transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .gold-button:hover {
   background: #8a3550;
+  transform: translateY(-2px);
 }
+
+/* ========================================
+   CLOSING MESSAGE
+======================================== */
 
 .closing {
   margin-top: 24px;
@@ -517,9 +610,13 @@ button, a {
 .bottom-ornament {
   margin-top: 28px;
   font-size: 15px;
+  line-height: 1.8;
 }
 
-/* Mobile screen adjustments */
+/* ========================================
+   MOBILE SCREEN ADJUSTMENTS
+======================================== */
+
 @media (max-width: 380px) {
   .entrance {
     gap: 17px;
@@ -537,7 +634,27 @@ button, a {
   .gate-monogram {
     width: 67px;
     height: 67px;
+    font-size: 19px;
+  }
+
+  .gate-design {
+    gap: 15px;
+  }
+
+  .gate-design > span {
     font-size: 23px;
+  }
+
+  .open-button {
+    max-width: 95%;
+    padding: 13px 10px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .entrance-date {
+    font-size: 9px;
+    letter-spacing: 2px;
   }
 
   .card {
@@ -551,12 +668,29 @@ button, a {
   .photo-gallery .photo-frame {
     padding: 4px;
   }
+
+  .event h3 {
+    font-size: 29px;
+  }
+
+  .date strong {
+    font-size: 62px;
+  }
+
+  .event-blessing {
+    font-size: 15px;
+  }
 }
 
-/* Respect reduced-motion accessibility preferences */
+/* ========================================
+   REDUCED-MOTION ACCESSIBILITY
+======================================== */
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
