@@ -5,22 +5,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#180c17">
-  <meta name="description" content="Wedding invitation of Abhinandan and Gunjan, December 2026.">
+
   <title>Abhinandan &amp; Gunjan | Wedding Invitation</title>
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Gate opening screen -->
+  <!-- =====================================
+       OPENING SCREEN
+  ====================================== -->
+
   <section id="entrance" class="entrance">
+
     <div class="gate-heading">
       <span>YOU ARE CORDIALLY INVITED</span>
+
       <h1>Abhinandan <i>&amp;</i> Gunjan</h1>
+
       <p>Two hearts · One beautiful forever</p>
     </div>
 
-    <!-- Decorative gates -->
+    <!-- Decorative opening gates -->
+
     <div class="gates" id="gates">
+
       <div class="gate gate-left">
         <div class="gate-design">
           <span>❧</span>
@@ -36,21 +45,35 @@
           <span>✧</span>
         </div>
       </div>
+
     </div>
 
     <button id="openButton" class="open-button" type="button">
-      <span>✧</span> CLICK HERE AND OPEN YOUR INVITATION <span>✧</span>
+      <span>✧</span>
+      CLICK HERE AND OPEN YOUR INVITATION
+      <span>✧</span>
     </button>
 
     <p class="entrance-date">11 · 12 · 2026</p>
+
   </section>
 
-  <!-- Wedding invitation -->
+
+  <!-- =====================================
+       WEDDING INVITATION
+  ====================================== -->
+
   <main id="invitation" class="invitation">
+
     <div class="card">
 
-      <!-- Golden floating particles stay inside this card -->
+      <!-- Floating golden hearts, flowers and sparkles.
+           IMPORTANT: Keep this inside .card -->
+
       <div id="petals" aria-hidden="true"></div>
+
+
+      <!-- Card heading -->
 
       <div class="top-ornament">❧ ❦ ❧</div>
 
@@ -63,39 +86,59 @@
         we invite you to celebrate our special days.
       </p>
 
-      <!-- Couple photos: keep couple1.jpg and couple2.jpg beside index.html -->
+
+      <!-- =================================
+           COUPLE PHOTO GALLERY
+      ================================== -->
+
       <div class="photo-gallery">
 
         <div class="photo-frame">
+
           <img
             src="couple1.jpg"
             alt="Abhinandan and Gunjan - Photo 1"
             onerror="this.style.display='none'; this.parentElement.classList.add('no-photo');"
           >
+
           <div class="photo-placeholder">
             G <span>♥</span> A
           </div>
+
         </div>
 
+
         <div class="photo-frame">
+
           <img
             src="couple2.jpg"
             alt="Abhinandan and Gunjan - Photo 2"
             onerror="this.style.display='none'; this.parentElement.classList.add('no-photo');"
           >
+
           <div class="photo-placeholder">
             G <span>♥</span> A
           </div>
+
         </div>
 
       </div>
 
+
+      <!-- =================================
+           BRIDE AND GROOM
+      ================================== -->
+
       <p class="eyebrow">THE GROOM &amp; BRIDE</p>
 
       <div class="names">
+
         <h3>Abhinandan</h3>
+
         <div class="ampersand">&amp;</div>
+
         <h3>Gunjan</h3>
+
       </div>
 
       <p class="blessing">
@@ -105,12 +148,19 @@
 
       <div class="gold-line"></div>
 
-      <!-- Event 1: Shubh Tilak -->
+
+      <!-- =================================
+           EVENT 1: SHUBH TILAK
+      ================================== -->
+
       <p class="eyebrow">FIRST CELEBRATION</p>
 
       <div class="event">
+
         <span class="event-icon">❧</span>
+
         <h3>Shubh Tilak</h3>
+
         <p class="event-day">SATURDAY</p>
 
         <div class="date">
@@ -121,16 +171,24 @@
         <p class="event-blessing">
           A joyful beginning to our wedding celebrations.
         </p>
+
       </div>
 
       <div class="gold-line"></div>
 
-      <!-- Event 2: Shubh Vivah -->
+
+      <!-- =================================
+           EVENT 2: SHUBH VIVAH
+      ================================== -->
+
       <p class="eyebrow">THE WEDDING DAY</p>
 
       <div class="event">
+
         <span class="event-icon">❧</span>
+
         <h3>Shubh Vivah</h3>
+
         <p class="event-day">FRIDAY</p>
 
         <div class="date">
@@ -141,13 +199,22 @@
         <p class="event-blessing">
           Join us as we begin our forever together.
         </p>
+
       </div>
 
-      <!-- Wedding venue -->
+
+      <!-- =================================
+           WEDDING VENUE
+      ================================== -->
+
       <div class="venue">
+
         <span class="venue-icon">✧</span>
+
         <h3>Pearl Palace</h3>
+
         <p>Buxar, Bihar, India</p>
+
       </div>
 
       <a
@@ -155,7 +222,14 @@
         href="https://www.google.com/maps/search/?api=1&amp;query=Pearl+Palace+Buxar+Bihar"
         target="_blank"
         rel="noopener noreferrer"
-      >VIEW WEDDING VENUE ↗</a>
+      >
+        VIEW WEDDING VENUE ↗
+      </a>
+
+
+      <!-- =================================
+           CLOSING MESSAGE
+      ================================== -->
 
       <p class="closing">
         Your presence will make our celebrations<br>
@@ -167,7 +241,13 @@
       </div>
 
     </div>
+
   </main>
+
+
+  <!-- =====================================
+       FLOATING PARTICLES & GATE ANIMATION
+  ====================================== -->
 
   <script>
     const entrance = document.getElementById("entrance");
@@ -176,24 +256,45 @@
     const invitation = document.getElementById("invitation");
     const petals = document.getElementById("petals");
 
-    // Golden flowers and sparkling symbols inside the card only
-    const symbols = ["✧", "✦", "❋", "✺", "✿", "❀", "♥", "♡"];
+    // Golden hearts, flowers and sparkles
+    const symbols = [
+      "♥", "♡", "✧", "✦", "❋", "✿", "❀", "✺"
+    ];
 
-    for (let i = 0; i < 38; i++) {
+    // Respect the visitor's reduced-motion preference
+    const reduceMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+
+    // Create particles inside the invitation card
+    const particleCount = reduceMotion ? 0 : 45;
+
+    for (let i = 0; i < particleCount; i++) {
       const petal = document.createElement("span");
 
       petal.className = "petal";
+
       petal.textContent =
         symbols[Math.floor(Math.random() * symbols.length)];
 
-      petal.style.left = Math.random() * 100 + "%";
-      petal.style.animationDuration =
-        (7 + Math.random() * 10) + "s";
-      petal.style.animationDelay =
-        (-Math.random() * 17) + "s";
-      petal.style.fontSize =
-        (10 + Math.random() * 16) + "px";
+      // Spread particles across the card width
+      petal.style.left = Math.random() * 96 + "%";
 
+      // Vary the symbol sizes
+      petal.style.fontSize =
+        (12 + Math.random() * 14) + "px";
+
+      // Random falling duration
+      const duration = 7 + Math.random() * 9;
+
+      petal.style.animationDuration = duration + "s";
+
+      // Negative delay makes particles visible at different
+      // stages of their animation as soon as the card opens
+      petal.style.animationDelay =
+        (-Math.random() * duration) + "s";
+
+      // Gentle sideways drift
       petal.style.setProperty(
         "--drift",
         (Math.random() * 100 - 50) + "px"
@@ -210,10 +311,12 @@
       button.classList.add("fade-out");
       button.disabled = true;
 
+      const delay = reduceMotion ? 50 : 1300;
+
       setTimeout(() => {
         entrance.classList.add("entrance-gone");
         invitation.classList.add("visible");
-      }, 1300);
+      }, delay);
     });
   </script>
 
