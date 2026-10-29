@@ -5,7 +5,6 @@
   --gold: #d7b66f;
   --gold-light: #f4d58d;
   --cream: #fff3df;
-  --wine: #64152d;
   --deep: #180c17;
   --card-bg: #26121f;
   --card-mid: #301724;
@@ -30,57 +29,9 @@ body {
   overflow-x: hidden;
 }
 
-button, a {
+button,
+a {
   -webkit-tap-highlight-color: transparent;
-}
-
-/* ========================================
-   FALLING FLOWERS AND GOLDEN SPARKLES
-======================================== */
-
-#petals {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
-  pointer-events: none;
-  z-index: 20;
-}
-
-.petal {
-  position: absolute;
-  top: -35px;
-  color: var(--gold-light);
-  opacity: 0.72;
-  animation: fall linear infinite;
-  text-shadow: 0 0 12px #f5d99050;
-}
-
-.petal:nth-child(3n) {
-  color: var(--rose);
-}
-
-.petal:nth-child(3n + 1) {
-  color: #fff0d4;
-}
-
-@keyframes fall {
-  0% {
-    transform: translate3d(0, -5vh, 0) rotate(0deg);
-    opacity: 0;
-  }
-
-  12% {
-    opacity: 0.8;
-  }
-
-  85% {
-    opacity: 0.65;
-  }
-
-  100% {
-    transform: translate3d(var(--drift), 110vh, 0) rotate(600deg);
-    opacity: 0;
-  }
 }
 
 /* ========================================
@@ -111,8 +62,7 @@ button, a {
   text-align: center;
 }
 
-.gate-heading > span,
-.eyebrow {
+.gate-heading > span {
   font-size: 9px;
   letter-spacing: 3px;
   color: var(--gold);
@@ -138,7 +88,7 @@ button, a {
 }
 
 /* ========================================
-   TWO ORNATE GATES
+   DECORATIVE GATES
 ======================================== */
 
 .gates {
@@ -161,7 +111,12 @@ button, a {
   border: 2px solid var(--gold);
 
   background:
-    radial-gradient(ellipse at center, #702d3f 0%, #3c1728 50%, #1d101d 100%);
+    radial-gradient(
+      ellipse at center,
+      #702d3f 0%,
+      #3c1728 50%,
+      #1d101d 100%
+    );
 }
 
 .gate::before {
@@ -276,7 +231,7 @@ button, a {
 }
 
 /* ========================================
-   MAIN INVITATION BACKGROUND
+   INVITATION PAGE BACKGROUND
 ======================================== */
 
 .invitation {
@@ -306,7 +261,7 @@ button, a {
 }
 
 /* ========================================
-   DARK LUXURY INVITATION CARD
+   DARK BURGUNDY INVITATION CARD
 ======================================== */
 
 .card {
@@ -314,6 +269,8 @@ button, a {
   max-width: 490px;
   padding: 45px 25px;
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
   text-align: center;
 
   color: var(--ivory);
@@ -332,13 +289,86 @@ button, a {
   box-shadow: 0 20px 70px #0008;
 }
 
+/* ========================================
+   GOLDEN FLOATING BACKGROUND INSIDE CARD
+======================================== */
+
+#petals {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Keep every invitation element above the particles */
+.card > *:not(#petals) {
+  position: relative;
+  z-index: 2;
+}
+
+/* Floating gold flowers and sparkles */
+.petal {
+  position: absolute;
+  top: -35px;
+  color: var(--gold-light);
+  opacity: 0.8;
+  animation: fall linear infinite;
+  pointer-events: none;
+  user-select: none;
+
+  text-shadow:
+    0 0 5px #f4d58d80,
+    0 0 12px #d7b66f60,
+    0 0 22px #d7b66f30;
+}
+
+.petal:nth-child(3n) {
+  color: #f4d58d;
+}
+
+.petal:nth-child(3n + 1) {
+  color: #fff0c2;
+}
+
+.petal:nth-child(3n + 2) {
+  color: #d7b66f;
+}
+
+@keyframes fall {
+  0% {
+    transform: translate3d(0, -5vh, 0) rotate(0deg);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 0.8;
+  }
+
+  50% {
+    opacity: 0.65;
+  }
+
+  85% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate3d(var(--drift), 110%, 0) rotate(600deg);
+    opacity: 0;
+  }
+}
+
+/* Card corner decorations */
 .card::before {
   content: "✧";
   position: absolute;
   top: 9px;
   left: 13px;
+  z-index: 3;
   color: var(--gold-light);
   font-size: 19px;
+  pointer-events: none;
 }
 
 .card::after {
@@ -346,9 +376,15 @@ button, a {
   position: absolute;
   bottom: 9px;
   right: 13px;
+  z-index: 3;
   color: var(--gold-light);
   font-size: 19px;
+  pointer-events: none;
 }
+
+/* ========================================
+   CARD ORNAMENTS AND HEADINGS
+======================================== */
 
 .top-ornament,
 .bottom-ornament {
@@ -362,6 +398,8 @@ button, a {
 }
 
 .card .eyebrow {
+  font-size: 9px;
+  letter-spacing: 3px;
   color: #e7c78b;
   line-height: 1.8;
 }
@@ -384,7 +422,7 @@ button, a {
 }
 
 /* ========================================
-   TWO-PHOTO GALLERY
+   COUPLE PHOTO GALLERY
 ======================================== */
 
 .photo-gallery {
@@ -431,8 +469,7 @@ button, a {
   border-radius: 115px 115px 2px 2px;
 }
 
-/* Photo placeholder */
-
+/* Placeholder when a photo is unavailable */
 .photo-gallery .photo-placeholder {
   display: none;
   width: 100%;
@@ -597,7 +634,7 @@ button, a {
 }
 
 /* ========================================
-   MAPS BUTTON
+   VENUE MAP BUTTON
 ======================================== */
 
 .gold-button {
