@@ -1,15 +1,19 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap');
 
+/* ========================================
+   COLOR PALETTE
+======================================== */
+
 :root {
   --gold: #d7b66f;
   --gold-light: #f4d58d;
+  --gold-bright: #ffe7a6;
   --cream: #fff3df;
   --deep: #180c17;
   --card-bg: #26121f;
   --card-mid: #301724;
-  --rose: #e7a5b5;
-  --ivory: #fff3df;
+  --wine: #64152d;
 }
 
 * {
@@ -58,6 +62,7 @@ a {
 }
 
 .gate-heading {
+  position: relative;
   z-index: 2;
   text-align: center;
 }
@@ -65,7 +70,7 @@ a {
 .gate-heading > span {
   font-size: 9px;
   letter-spacing: 3px;
-  color: var(--gold);
+  color: var(--gold-light);
 }
 
 .gate-heading h1 {
@@ -73,7 +78,7 @@ a {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(34px, 8vw, 62px);
   font-weight: 400;
-  color: var(--gold-light);
+  color: var(--gold-bright);
 }
 
 .gate-heading h1 i {
@@ -154,12 +159,13 @@ a {
 }
 
 .gate-design {
+  position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 20px;
-  color: var(--gold);
+  color: var(--gold-light);
 }
 
 .gate-design > span {
@@ -175,14 +181,9 @@ a {
   border-radius: 50%;
   font-family: 'Cormorant Garamond', serif;
   font-size: 23px;
-  color: var(--gold-light);
-  box-shadow: 0 0 25px #d7b66f15;
+  color: var(--gold-bright);
+  box-shadow: 0 0 25px #d7b66f20;
   text-align: center;
-}
-
-.gate-monogram i {
-  font-size: 14px;
-  color: var(--gold-light);
 }
 
 /* ========================================
@@ -196,7 +197,7 @@ a {
   border: 1px solid var(--gold);
   border-radius: 2px;
   background: #d7b66f12;
-  color: var(--gold-light);
+  color: var(--gold-bright);
   font-family: 'Montserrat', sans-serif;
   font-size: 9px;
   letter-spacing: 2px;
@@ -261,7 +262,7 @@ a {
 }
 
 /* ========================================
-   DARK BURGUNDY INVITATION CARD
+   DARK BURGUNDY WEDDING CARD
 ======================================== */
 
 .card {
@@ -272,8 +273,7 @@ a {
   isolation: isolate;
   overflow: hidden;
   text-align: center;
-
-  color: var(--ivory);
+  color: var(--cream);
 
   background:
     radial-gradient(
@@ -290,17 +290,25 @@ a {
 }
 
 /* ========================================
-   GOLDEN FLOATING FLOWERS, HEARTS & SPARKLES
+   FLOATING GOLDEN HEARTS, FLOWERS & SPARKLES
 ======================================== */
+
+/*
+IMPORTANT:
+Keep <div id="petals"></div> INSIDE .card
+in index.html so the particles float within
+the invitation card rather than the whole page.
+*/
 
 #petals {
   position: absolute;
   inset: 0;
   overflow: hidden;
   pointer-events: none;
-  z-index: 0;
+  z-index: 1;
 }
 
+/* Keep the invitation content above the particles */
 .card > *:not(#petals) {
   position: relative;
   z-index: 2;
@@ -309,19 +317,25 @@ a {
 .petal {
   position: absolute;
   top: -35px;
+  display: block;
+
   color: var(--gold-light);
-  opacity: 0.8;
-  animation: fall linear infinite;
+  opacity: 0;
+  line-height: 1;
+
   pointer-events: none;
   user-select: none;
 
   text-shadow:
-    0 0 5px #f4d58d90,
-    0 0 12px #d7b66f80,
-    0 0 20px #d7b66f50;
+    0 0 6px #f4d58d90,
+    0 0 14px #d7b66f80,
+    0 0 22px #d7b66f40;
+
+  animation: cardFloat linear infinite;
+  will-change: transform, opacity;
 }
 
-/* Every particle uses a golden shade */
+/* Gold color variations only */
 .petal:nth-child(3n) {
   color: #f4d58d;
 }
@@ -334,42 +348,46 @@ a {
   color: #d7b66f;
 }
 
-/* All hearts and other symbols remain golden */
+/* Extra golden glow for selected particles */
 .petal:nth-child(5n),
 .petal:nth-child(7n) {
-  color: #f4d58d;
+  color: #ffe7a6;
 
   text-shadow:
-    0 0 5px #f4d58d90,
-    0 0 12px #d7b66f80,
-    0 0 20px #d7b66f50;
+    0 0 5px #ffe7a690,
+    0 0 12px #f4d58d90,
+    0 0 22px #d7b66f60;
 }
 
-@keyframes fall {
+/* Continuous falling and drifting motion */
+@keyframes cardFloat {
   0% {
-    transform: translate3d(0, -5vh, 0) rotate(0deg);
+    transform: translate3d(0, 0, 0) rotate(0deg);
     opacity: 0;
   }
 
-  15% {
-    opacity: 0.8;
+  10% {
+    opacity: 0.85;
   }
 
   50% {
+    opacity: 0.75;
+  }
+
+  90% {
     opacity: 0.65;
   }
 
-  85% {
-    opacity: 0.7;
-  }
-
   100% {
-    transform: translate3d(var(--drift), 110%, 0) rotate(600deg);
+    transform: translate3d(var(--drift), 520px, 0) rotate(360deg);
     opacity: 0;
   }
 }
 
-/* Card corner decorations */
+/* ========================================
+   CARD CORNER DECORATIONS
+======================================== */
+
 .card::before {
   content: "✧";
   position: absolute;
@@ -419,7 +437,7 @@ a {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(32px, 8vw, 45px);
   font-weight: 400;
-  color: var(--gold-light);
+  color: var(--gold-bright);
 }
 
 .intro,
@@ -428,7 +446,7 @@ a {
   font-family: 'Cormorant Garamond', serif;
   font-size: 17px;
   line-height: 1.65;
-  color: var(--ivory);
+  color: var(--cream);
 }
 
 /* ========================================
@@ -490,7 +508,7 @@ a {
 
   font-family: 'Cormorant Garamond', serif;
   font-size: 38px;
-  color: var(--gold-light);
+  color: var(--gold-bright);
 
   background: linear-gradient(145deg, #492336, #26121f);
   border-radius: 110px 110px 2px 2px;
@@ -514,7 +532,7 @@ a {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(36px, 9vw, 48px);
   font-weight: 400;
-  color: var(--gold-light);
+  color: var(--gold-bright);
 }
 
 .ampersand {
@@ -540,7 +558,7 @@ a {
   background: linear-gradient(
     90deg,
     transparent,
-    var(--gold),
+    var(--gold-light),
     transparent
   );
 }
@@ -566,7 +584,7 @@ a {
 
 .event h3 {
   margin: 10px 0 12px;
-  color: var(--gold-light);
+  color: var(--gold-bright);
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(29px, 7vw, 36px);
   font-weight: 500;
@@ -612,7 +630,7 @@ a {
   font-weight: 400;
   font-size: 70px;
   line-height: 1;
-  color: var(--gold-light);
+  color: var(--gold-bright);
 }
 
 /* ========================================
@@ -633,7 +651,7 @@ a {
   font-family: 'Cormorant Garamond', serif;
   font-size: 29px;
   font-weight: 500;
-  color: var(--gold-light);
+  color: var(--gold-bright);
 }
 
 .venue p {
@@ -643,7 +661,7 @@ a {
 }
 
 /* ========================================
-   VENUE MAP BUTTON
+   WEDDING VENUE MAP BUTTON
 ======================================== */
 
 .gold-button {
