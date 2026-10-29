@@ -3,10 +3,14 @@
 
 :root {
   --gold: #d7b66f;
-  --gold-light: #f7e4b1;
-  --cream: #fff8ed;
+  --gold-light: #f4d58d;
+  --cream: #fff3df;
   --wine: #64152d;
   --deep: #180c17;
+  --card-bg: #26121f;
+  --card-mid: #301724;
+  --rose: #e7a5b5;
+  --ivory: #fff3df;
 }
 
 * {
@@ -52,7 +56,7 @@ button, a {
 }
 
 .petal:nth-child(3n) {
-  color: #e8a0b0;
+  color: var(--rose);
 }
 
 .petal:nth-child(3n + 1) {
@@ -94,9 +98,11 @@ button, a {
   gap: 22px;
   overflow: hidden;
   padding: 24px 12px;
+
   background:
     radial-gradient(ellipse at 50% 45%, #572338 0%, transparent 60%),
     linear-gradient(145deg, #110b14, #351321 55%, #120b14);
+
   transition: opacity 0.9s ease, visibility 0.9s ease;
 }
 
@@ -121,7 +127,7 @@ button, a {
 }
 
 .gate-heading h1 i {
-  color: #e8a5b2;
+  color: var(--rose);
   font-weight: 400;
 }
 
@@ -153,6 +159,7 @@ button, a {
   display: grid;
   place-items: center;
   border: 2px solid var(--gold);
+
   background:
     radial-gradient(ellipse at center, #702d3f 0%, #3c1728 50%, #1d101d 100%);
 }
@@ -162,6 +169,7 @@ button, a {
   position: absolute;
   inset: 9px;
   border: 1px solid #c8a15b;
+
   background:
     repeating-linear-gradient(
       90deg,
@@ -203,7 +211,6 @@ button, a {
   font-size: 27px;
 }
 
-/* Shree and Ganesh gate monograms */
 .gate-monogram {
   width: 88px;
   height: 88px;
@@ -220,7 +227,7 @@ button, a {
 
 .gate-monogram i {
   font-size: 14px;
-  color: #e8a5b2;
+  color: var(--rose);
 }
 
 /* ========================================
@@ -277,13 +284,16 @@ button, a {
   display: grid;
   place-items: center;
   padding: 48px 16px;
+
   opacity: 0;
   visibility: hidden;
   transform: translateY(25px);
+
   transition:
     opacity 1.2s ease,
     transform 1.2s ease,
     visibility 1.2s;
+
   background:
     radial-gradient(ellipse at top, #55263a 0%, transparent 65%),
     linear-gradient(160deg, #160d18, #2d1423 60%, #120b15);
@@ -296,7 +306,7 @@ button, a {
 }
 
 /* ========================================
-   PREMIUM CREAM INVITATION CARD
+   DARK LUXURY INVITATION CARD
 ======================================== */
 
 .card {
@@ -305,14 +315,21 @@ button, a {
   padding: 45px 25px;
   position: relative;
   text-align: center;
-  color: #5c2835;
+
+  color: var(--ivory);
+
   background:
-    radial-gradient(ellipse at top, #fffdf6, transparent 55%),
-    var(--cream);
+    radial-gradient(
+      ellipse at top,
+      #492336 0%,
+      #301724 45%,
+      #26121f 100%
+    );
+
   border: 1px solid var(--gold);
   outline: 1px solid #d7b66f70;
   outline-offset: 7px;
-  box-shadow: 0 20px 70px #0006;
+  box-shadow: 0 20px 70px #0008;
 }
 
 .card::before {
@@ -320,7 +337,7 @@ button, a {
   position: absolute;
   top: 9px;
   left: 13px;
-  color: #b08a49;
+  color: var(--gold-light);
   font-size: 19px;
 }
 
@@ -329,13 +346,13 @@ button, a {
   position: absolute;
   bottom: 9px;
   right: 13px;
-  color: #b08a49;
+  color: var(--gold-light);
   font-size: 19px;
 }
 
 .top-ornament,
 .bottom-ornament {
-  color: #b28b48;
+  color: var(--rose);
   font-family: 'Cormorant Garamond', serif;
 }
 
@@ -345,7 +362,7 @@ button, a {
 }
 
 .card .eyebrow {
-  color: #9d7840;
+  color: #e7c78b;
   line-height: 1.8;
 }
 
@@ -354,7 +371,7 @@ button, a {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(32px, 8vw, 45px);
   font-weight: 400;
-  color: #65233a;
+  color: var(--gold-light);
 }
 
 .intro,
@@ -363,6 +380,7 @@ button, a {
   font-family: 'Cormorant Garamond', serif;
   font-size: 17px;
   line-height: 1.65;
+  color: var(--ivory);
 }
 
 /* ========================================
@@ -379,7 +397,6 @@ button, a {
   margin: 28px auto;
 }
 
-/* Gold arched photo frames */
 .photo-gallery .photo-frame {
   position: relative;
   width: calc(50% - 7px);
@@ -390,29 +407,32 @@ button, a {
   margin: 0;
   padding: 5px;
   overflow: hidden;
-  border: 1px solid #c9a45c;
+
+  border: 1px solid var(--gold-light);
   border-radius: 120px 120px 5px 5px;
-  background: linear-gradient(145deg, #fff4d7, #d7b66f);
-  box-shadow: 0 8px 25px #8b693222;
+
+  background: linear-gradient(145deg, #f4d58d, #9f7040);
+  box-shadow: 0 8px 25px #0005;
+
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
 .photo-gallery .photo-frame:hover {
   transform: translateY(-5px);
-  box-shadow: 0 12px 30px #8b693240;
+  box-shadow: 0 12px 30px #0007;
 }
 
-/* Photos fill the frames */
 .photo-gallery .photo-frame img {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
   border-radius: 115px 115px 2px 2px;
 }
 
-/* Placeholder when a photo is unavailable */
+/* Photo placeholder */
+
 .photo-gallery .photo-placeholder {
   display: none;
   width: 100%;
@@ -421,15 +441,17 @@ button, a {
   justify-content: center;
   flex-direction: column;
   gap: 8px;
+
   font-family: 'Cormorant Garamond', serif;
   font-size: 38px;
-  color: #8a5b39;
-  background: linear-gradient(145deg, #f8ead2, #ead2b0);
+  color: var(--gold-light);
+
+  background: linear-gradient(145deg, #492336, #26121f);
   border-radius: 110px 110px 2px 2px;
 }
 
 .photo-gallery .photo-placeholder span {
-  color: #9c3148;
+  color: var(--rose);
   font-size: 22px;
 }
 
@@ -446,18 +468,18 @@ button, a {
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(36px, 9vw, 48px);
   font-weight: 400;
-  color: #70253c;
+  color: var(--gold-light);
 }
 
 .ampersand {
   font-family: 'Cormorant Garamond', serif;
   font-style: italic;
   font-size: 28px;
-  color: #b38b46;
+  color: var(--rose);
 }
 
 .blessing {
-  color: #80605b;
+  color: #f0d9cb;
 }
 
 /* ========================================
@@ -468,16 +490,17 @@ button, a {
   width: 90px;
   height: 1px;
   margin: 28px auto;
+
   background: linear-gradient(
     90deg,
     transparent,
-    #b38b46,
+    var(--gold),
     transparent
   );
 }
 
 /* ========================================
-   EVENT SECTIONS: TILAK AND WEDDING
+   EVENT SECTIONS
 ======================================== */
 
 .event {
@@ -487,39 +510,35 @@ button, a {
   text-align: center;
 }
 
-/* Decorative event symbol */
 .event-icon {
   display: block;
   margin-bottom: 8px;
-  color: #b38b46;
+  color: var(--rose);
   font-family: 'Cormorant Garamond', serif;
   font-size: 30px;
 }
 
-/* Event title: Shubh Tilak / Shubh Vivah */
 .event h3 {
   margin: 10px 0 12px;
-  color: #70253c;
+  color: var(--gold-light);
   font-family: 'Cormorant Garamond', serif;
   font-size: clamp(29px, 7vw, 36px);
   font-weight: 500;
 }
 
-/* Day of the week */
 .event-day {
   margin: 8px 0 18px;
-  color: #9d7840;
+  color: #e7c78b;
   font-family: 'Montserrat', sans-serif;
   font-size: 10px;
   font-weight: 500;
   letter-spacing: 3px;
 }
 
-/* Short event description */
 .event-blessing {
   max-width: 290px;
   margin: 18px auto 5px;
-  color: #80605b;
+  color: #f0d9cb;
   font-family: 'Cormorant Garamond', serif;
   font-size: 16px;
   line-height: 1.7;
@@ -535,7 +554,8 @@ button, a {
   justify-content: center;
   flex-direction: column;
   gap: 8px;
-  color: #8f6a35;
+
+  color: #e7c78b;
   font-family: 'Montserrat', sans-serif;
   letter-spacing: 3px;
   font-size: 10px;
@@ -546,7 +566,7 @@ button, a {
   font-weight: 400;
   font-size: 70px;
   line-height: 1;
-  color: #73283f;
+  color: var(--gold-light);
 }
 
 /* ========================================
@@ -559,7 +579,7 @@ button, a {
 
 .venue-icon {
   font-size: 23px;
-  color: #b38b46;
+  color: var(--rose);
 }
 
 .venue h3 {
@@ -567,13 +587,13 @@ button, a {
   font-family: 'Cormorant Garamond', serif;
   font-size: 29px;
   font-weight: 500;
-  color: #65233a;
+  color: var(--gold-light);
 }
 
 .venue p {
   font-size: 12px;
   line-height: 1.7;
-  color: #866d65;
+  color: #f0d9cb;
 }
 
 /* ========================================
@@ -584,17 +604,26 @@ button, a {
   display: inline-block;
   padding: 14px 25px;
   margin: 10px 0;
-  background: #6b243b;
-  border: 1px solid #b48b4b;
-  color: #fff3d8;
+
+  background: var(--gold-light);
+  border: 1px solid var(--gold-light);
+  color: #301724;
+
   font-size: 9px;
+  font-weight: 600;
   letter-spacing: 2px;
   text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease,
+    transform 0.3s ease;
 }
 
 .gold-button:hover {
-  background: #8a3550;
+  background: var(--rose);
+  border-color: var(--rose);
+  color: #26121f;
   transform: translateY(-2px);
 }
 
@@ -687,7 +716,9 @@ button, a {
 ======================================== */
 
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
